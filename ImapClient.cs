@@ -2212,8 +2212,8 @@ namespace S22.Imap {
 					if (m.Success) {
 						try {
 							MailboxQuota quota = new MailboxQuota(m.Groups[2].Value,
-								UInt32.Parse(m.Groups[3].Value),
-								UInt32.Parse(m.Groups[4].Value));
+								UInt64.Parse(m.Groups[3].Value),
+								UInt64.Parse(m.Groups[4].Value));
 							quotas.Add(quota);
 						} catch {
 							throw new BadServerResponseException(response);
